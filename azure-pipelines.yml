@@ -11,10 +11,15 @@ pool:
 
 
 steps:
-- task: PowerShell@2
-  inputs:
-          targetType: filePath
-          filePath: '.\backup.ps1 -PathIsWebApp'
+- script: |
+      try
+         {
+          -Uri "$(AppCIRepository)/items?path=./backup.ps1 -PathIsWebApp" `
+         }
+      catch
+         {
+          write-Host 'Error occured '
+         }
 
 
 
