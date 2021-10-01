@@ -14,7 +14,7 @@ steps:
 - script: |
       try
          {
-          -Uri "$(AppCIRepository)/items?path=./backup.ps1 -PathIsWebApp" `
+          -Uri "$(AppCIRepository)/items?path=./backup.ps1 -PathIsWebApp"
          }
       catch
          {
